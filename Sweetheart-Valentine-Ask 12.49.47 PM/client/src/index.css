@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Pacifico&family=DM+Sans:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Romantic Red & Pink Palette */
+  --background: 340 100% 97%;    /* Very light pink */
+  --foreground: 345 80% 20%;     /* Dark burgundy text */
+  
+  --primary: 345 90% 60%;        /* Vibrant Valentine's Red */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 330 80% 90%;      /* Soft Pink */
+  --secondary-foreground: 345 60% 40%;
+  
+  --accent: 330 100% 70%;        /* Hot Pink Accent */
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --muted: 330 30% 96%;
+  --muted-foreground: 345 20% 50%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 345 80% 20%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 345 80% 20%;
+  
+  --border: 330 40% 90%;
+  --input: 330 40% 90%;
+  --ring: 345 90% 60%;
+  
+  --radius: 1rem;
+  
+  /* Fonts */
+  --font-handwriting: 'Architects Daughter', cursive;
+  --font-display: 'Pacifico', cursive;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: var(--font-body);
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(255, 182, 193, 0.2) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(255, 105, 180, 0.15) 0%, transparent 25%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-wide;
+  }
+}
+
+@layer utilities {
+  .font-handwriting {
+    font-family: var(--font-handwriting);
+  }
+  
+  .text-shadow-sm {
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 2px 2px 0px rgba(255,182,193,0.5);
+  }
+
+  .heart-beat {
+    animation: heartBeat 1.5s infinite;
+  }
+
+  @keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+  }
+}
